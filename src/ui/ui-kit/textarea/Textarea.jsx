@@ -3,9 +3,6 @@ import './Textarea.css'
 
 export default class Textarea extends React.Component {
     styling;
-    state = {
-        text: ""
-    };
 
     constructor(props, context) {
         super(props, context);
@@ -21,11 +18,11 @@ export default class Textarea extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({text: event.target.value});
+        event.isHeader = this.props.isHeader;
     }
 
     render() {
-        return <textarea value={this.state.text} onChange={(e) => this.handleChange(e)} style={this.styling}
+        return <textarea value={this.props.text} onChangeCapture={(e) => this.handleChange(e)} style={this.styling}
                          placeholder={this.props.placeholder} rows={this.props.rows} className="textarea"/>;
     }
 }

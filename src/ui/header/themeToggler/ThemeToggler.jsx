@@ -1,5 +1,5 @@
 import React from "react";
-import IconButton from "../../ui-kit/buttons/iconButton/IconButton";
+import IconButton from "../../ui-kit/buttons/iconButton/IconButton.jsx";
 
 export default class ThemeToggler extends React.Component {
     state = {

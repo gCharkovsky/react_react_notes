@@ -1,6 +1,6 @@
 import React from "react";
 import './IconButton.css'
-import * as MySvgCollection from "././../../../../assets/Icons/"
+import * as MySvgCollection from "././../../../../assets/Icons/index.js"
 
 
 export default class IconButton extends React.Component {
@@ -18,8 +18,9 @@ export default class IconButton extends React.Component {
     }
 
     render() {
-        return <button className={"icon-button"} onClick={(e)=>this.handeleClick(e)}>
-            <this.Icon style={{fill: "var(--"+this.color_type+"-color)", stroke: "var(--"+this.color_type+"-color)"}}/>
+        return <button type={this.props.type} className={"icon-button"} onClick={(e) => this.handeleClick(e)}>
+            <this.Icon
+                style={{fill: "var(--" + this.color_type + "-color)", stroke: "var(--" + this.color_type + "-color)"}}/>
         </button>
     }
 }

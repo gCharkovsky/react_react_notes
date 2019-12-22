@@ -1,8 +1,8 @@
 import React from "react";
 import './Search.css'
-import IconButton from "../ui-kit/buttons/iconButton/IconButton";
-import Input from "../ui-kit/input/Input";
-import {ReactComponent as ClearIcon} from "../../assets/Icons/clear.svg"
+import IconButton from "../ui-kit/buttons/iconButton/IconButton.jsx";
+import Input from "../ui-kit/input/Input.jsx";
+import ClearIcon from "../../assets/Icons/clear.svg"
 
 export default class Search extends React.Component {
     state = {
