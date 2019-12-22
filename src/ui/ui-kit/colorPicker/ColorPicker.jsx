@@ -1,5 +1,5 @@
 import React from "react";
-import ColorItem from "./ColorItem";
+import ColorItem from "./ColorItem.jsx";
 import './ColorPicker.css'
 
 export default class ColorPicker extends React.Component {
@@ -17,24 +17,29 @@ export default class ColorPicker extends React.Component {
         };
     }
 
-    updateColor(event){
-        if (event.target.className === "color-picker"){
+    updateColor(event) {
+        if (event.target.className === "color-picker") {
             event.preventDefault();
             return;
         }
         let chosenColor = event.target.style.backgroundColor;
-        if(chosenColor === this.state.color){
+        if (chosenColor === this.state.color) {
             this.setState({collapsed: !this.state.collapsed});
+            console.log('stopped');
+            event.preventDefault();
+            event.stopPropagation();
         } else {
             this.setState({collapsed: true, color: chosenColor});
+            event.color = chosenColor;
         }
-        event.preventDefault();
+
     };
 
     render() {
-        const colorItems = !this.state.collapsed ? this.defaultColors.map((color) => <ColorItem key={color} color={color}/>) : null;
+        const colorItems = !this.state.collapsed ? this.defaultColors.map((color) => <ColorItem key={color}
+                                                                                                color={color}/>) : null;
         return <div className={"color-picker"} onClick={(e) => this.updateColor(e)}>
-            <ColorItem color={this.state.color} />
+            <ColorItem color={this.state.color}/>
             {colorItems}
         </div>
     }

@@ -1,9 +1,9 @@
 import React from "react";
 import './Header.css'
-import IconButton from "../ui-kit/buttons/iconButton/IconButton";
-import Search from "../search/Search";
-import ThemeToggler from "./themeToggler/ThemeToggler";
-import {ReactComponent as Logo} from "../../assets/Icons/logo.svg";
+import IconButton from "../ui-kit/buttons/iconButton/IconButton.jsx";
+import Search from "../search/Search.jsx";
+import ThemeToggler from "./themeToggler/ThemeToggler.jsx";
+import Logo from "../../assets/Icons/logo.svg";
 
 
 export default class Header extends React.Component {
